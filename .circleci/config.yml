@@ -640,6 +640,9 @@ jobs:
   merge_to_main:
     docker:
       - image: circleci/android:api-27-alpha
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_ACCESS_TOKEN
     environment:
       JVM_OPTS: -Xmx1024m
     steps:
@@ -675,6 +678,9 @@ jobs:
   prepare_release_sdk:
     docker:
       - image: circleci/android:api-27-alpha
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_ACCESS_TOKEN
     environment:
       JVM_OPTS: -Xmx1024m
     steps:
@@ -689,6 +695,9 @@ jobs:
   create_pullrequest_for_modelupdate:
     docker:
       - image: circleci/android:api-27-alpha
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_ACCESS_TOKEN
     environment:
       JVM_OPTS: -Xmx1024m
     steps:
